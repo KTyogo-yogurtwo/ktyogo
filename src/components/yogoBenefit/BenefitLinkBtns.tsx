@@ -3,18 +3,20 @@ import Link from 'next/link';
 
 interface BenefitLinkBtnsProps {
   className: string;
+  active: string;
 }
 
-const BenefitLinkBtns = ({ className }: BenefitLinkBtnsProps) => {
+const BenefitLinkBtns = ({ className, active }: BenefitLinkBtnsProps) => {
   return (
     <div className={`${className} flex w-[100vw] h-[14.8vw]`}>
+      {/* {active} */}
       <Link
         href="#link1"
         className="flex-1 text-center text-[0px]"
         style={{
           backgroundImage: `url(${benefit_links.src})`,
           backgroundSize: '400% auto',
-          backgroundPosition: '0 0',
+          backgroundPosition: active === 'link1' ? '0 100%' : '0 0',
           backgroundRepeat: 'no-repeat',
         }}
       >
@@ -26,7 +28,7 @@ const BenefitLinkBtns = ({ className }: BenefitLinkBtnsProps) => {
         style={{
           backgroundImage: `url(${benefit_links.src})`,
           backgroundSize: '400% auto',
-          backgroundPosition: '33.3% 0',
+          backgroundPosition: active === 'link2' ? '33.3% 100%' : '33.3% 0',
           backgroundRepeat: 'no-repeat',
         }}
       >
@@ -38,7 +40,7 @@ const BenefitLinkBtns = ({ className }: BenefitLinkBtnsProps) => {
         style={{
           backgroundImage: `url(${benefit_links.src})`,
           backgroundSize: '400% auto',
-          backgroundPosition: '66.6% 0',
+          backgroundPosition: active === 'link3' ? '66.6% 100%' : '66.6% 0',
           backgroundRepeat: 'no-repeat',
         }}
       >
@@ -50,7 +52,7 @@ const BenefitLinkBtns = ({ className }: BenefitLinkBtnsProps) => {
         style={{
           backgroundImage: `url(${benefit_links.src})`,
           backgroundSize: '400% auto',
-          backgroundPosition: '100% 0',
+          backgroundPosition: active === 'link4' ? '100% 100%' : '100% 0',
           backgroundRepeat: 'no-repeat',
         }}
       >
