@@ -1,18 +1,17 @@
 import { benefit_links } from '@/assets/images/yogoBenefit/images';
-import Link from 'next/link';
 
 interface BenefitLinkBtnsProps {
   className: string;
   active: string;
+  onLinkClick: (id: string) => void;
 }
 
-const BenefitLinkBtns = ({ className, active }: BenefitLinkBtnsProps) => {
+const BenefitLinkBtns = ({ className, active, onLinkClick }: BenefitLinkBtnsProps) => {
   return (
     <div className={`${className} flex w-[100vw] h-[14.8vw]`}>
-      {/* {active} */}
-      <Link
-        href="#link1"
+      <button
         className="flex-1 text-center text-[0px]"
+        onClick={() => onLinkClick('link1')}
         style={{
           backgroundImage: `url(${benefit_links.src})`,
           backgroundSize: '400% auto',
@@ -21,10 +20,10 @@ const BenefitLinkBtns = ({ className, active }: BenefitLinkBtnsProps) => {
         }}
       >
         초이스 플러스
-      </Link>
-      <Link
-        href="#link2"
+      </button>
+      <button
         className="flex-1 text-center text-[0px]"
+        onClick={() => onLinkClick('link2')}
         style={{
           backgroundImage: `url(${benefit_links.src})`,
           backgroundSize: '400% auto',
@@ -33,10 +32,10 @@ const BenefitLinkBtns = ({ className, active }: BenefitLinkBtnsProps) => {
         }}
       >
         데이터 추가 혜택
-      </Link>
-      <Link
-        href="#link3"
+      </button>
+      <button
         className="flex-1 text-center text-[0px]"
+        onClick={() => onLinkClick('link3')}
         style={{
           backgroundImage: `url(${benefit_links.src})`,
           backgroundSize: '400% auto',
@@ -45,10 +44,10 @@ const BenefitLinkBtns = ({ className, active }: BenefitLinkBtnsProps) => {
         }}
       >
         멤버십 프로모션
-      </Link>
-      <Link
-        href="#link4"
+      </button>
+      <button
         className="flex-1 text-center text-[0px]"
+        onClick={() => onLinkClick('link4')}
         style={{
           backgroundImage: `url(${benefit_links.src})`,
           backgroundSize: '400% auto',
@@ -57,7 +56,7 @@ const BenefitLinkBtns = ({ className, active }: BenefitLinkBtnsProps) => {
         }}
       >
         KT 쿠폰팩 혜택
-      </Link>
+      </button>
     </div>
   );
 };

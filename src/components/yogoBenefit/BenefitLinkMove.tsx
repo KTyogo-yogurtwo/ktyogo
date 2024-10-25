@@ -45,6 +45,21 @@ const BenefitLinkMove = () => {
     return () => observer.disconnect();
   }, [activeSection]);
 
+  // 커스텀 스크롤 이동 함수
+  const scrollToSection = (id: string) => {
+    const section = sectionRefs.current[id];
+    if (section) {
+      const offset = 100; // 실높이보다 더 올라가는 정도
+      const elementPosition = section.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
     <>
       {/* 스크롤시 나타나는 링크 버튼 */}
@@ -53,21 +68,34 @@ const BenefitLinkMove = () => {
           isStickyVisible ? 'translate-y-[35px] opacity-100' : '-translate-y-[100] opacity-0'
         }`}
         active={activeSection}
+        onLinkClick={scrollToSection}
       />
       <div className="relative">
         <Image src={yogo_benefit_4} alt="yogo" className="w-[100%]" />
-        <Link href="#link1" className="w-[37.33%] h-[27.38%] block absolute top-[25%] left-[10%] text-[0px]">
+        <button
+          className="w-[37.33%] h-[27.38%] block absolute top-[25%] left-[10%] text-[0px]"
+          onClick={() => scrollToSection('link1')}
+        >
           초이스 플러스
-        </Link>
-        <Link href="#link2" className="w-[37.33%] h-[27.38%] block absolute top-[25%] right-[10%] text-[0px]">
+        </button>
+        <button
+          className="w-[37.33%] h-[27.38%] block absolute top-[25%] right-[10%] text-[0px]"
+          onClick={() => scrollToSection('link2')}
+        >
           데이터 추가 혜택
-        </Link>
-        <Link href="#link3" className="w-[37.33%] h-[27.38%] block absolute top-[59%] left-[10%] text-[0px]">
+        </button>
+        <button
+          className="w-[37.33%] h-[27.38%] block absolute top-[59%] left-[10%] text-[0px]"
+          onClick={() => scrollToSection('link3')}
+        >
           멤버십 프로모션
-        </Link>
-        <Link href="#link4" className="w-[37.33%] h-[27.38%] block absolute top-[59%] right-[10%] text-[0px]">
+        </button>
+        <button
+          className="w-[37.33%] h-[27.38%] block absolute top-[59%] right-[10%] text-[0px]"
+          onClick={() => scrollToSection('link4')}
+        >
           KT 쿠폰팩 혜택
-        </Link>
+        </button>
       </div>
       {/* 링크 버튼이 나타나는 부분 */}
 
