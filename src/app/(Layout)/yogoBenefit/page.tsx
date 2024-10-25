@@ -114,12 +114,12 @@ const YogoBenefit = () => {
       </div>
       <div className="relative">
         <Image src={yogo_benefit_11} alt="더 좋아진 요고 시즌2" className="w-[100%]" />
-        <a
+        <Link
           href="https://m.shop.kt.com:444/m/display/olhsPlan.do?plnDispNo=2388"
           className="absolute block top-[66%] left-[4%] w-[24%] h-[22%] text-[0px]"
         >
           자세히 보기
-        </a>
+        </Link>
       </div>
       <Caution />
     </>

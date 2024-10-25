@@ -10,6 +10,7 @@ import {
 import Image from 'next/image';
 import BenefitLinkBtns from './BenefitLinkBtns';
 import { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 
 const BenefitLinkMove = () => {
   const [isStickyVisible, setStickyVisible] = useState(false); // 링크버튼이 보여지는 여부
@@ -35,36 +36,36 @@ const BenefitLinkMove = () => {
       {/* 스크롤시 나타나는 링크 버튼 */}
       <BenefitLinkBtns
         className={`fixed top-[20px] z-[99] transition-all duration-500 ${
-          isStickyVisible ? 'translate-y-0 opacity-100' : '-translate-y-[50px] opacity-0'
+          isStickyVisible ? 'translate-y-[35px] opacity-100' : '-translate-y-[100] opacity-0'
         }`}
       />
 
       <div className="relative">
         <Image src={yogo_benefit_4} alt="yogo" className="w-[100%]" />
-        <a href="#link1" className="w-[37.33%] h-[27.38%] block absolute top-[25%] left-[10%] text-[0px]">
+        <Link href="#link1" className="w-[37.33%] h-[27.38%] block absolute top-[25%] left-[10%] text-[0px]">
           초이스 플러스
-        </a>
-        <a href="#link2" className="w-[37.33%] h-[27.38%] block absolute top-[25%] right-[10%] text-[0px]">
+        </Link>
+        <Link href="#link2" className="w-[37.33%] h-[27.38%] block absolute top-[25%] right-[10%] text-[0px]">
           데이터 추가 혜택
-        </a>
-        <a href="#link3" className="w-[37.33%] h-[27.38%] block absolute top-[59%] left-[10%] text-[0px]">
+        </Link>
+        <Link href="#link3" className="w-[37.33%] h-[27.38%] block absolute top-[59%] left-[10%] text-[0px]">
           멤버십 프로모션
-        </a>
-        <a href="#link4" className="w-[37.33%] h-[27.38%] block absolute top-[59%] right-[10%] text-[0px]">
+        </Link>
+        <Link href="#link4" className="w-[37.33%] h-[27.38%] block absolute top-[59%] right-[10%] text-[0px]">
           KT 쿠폰팩 혜택
-        </a>
+        </Link>
       </div>
 
       {/* 링크 버튼이 나타나는 부분 */}
       <div ref={sectionRef}>
-        <div className="relative">
-          <Image src={yogo_benefit_5} alt="더욱 강력해진 시즌2" id="link1" className="w-[100%]" />
-          <a
+        <div className="relative" id="link1">
+          <Image src={yogo_benefit_5} alt="더욱 강력해진 시즌2" className="w-[100%]" />
+          <Link
             className="block absolute top-[81%] left-[10%] w-[80%] h-[5%] text-[0px]"
             href="https://m.product.kt.com/mDic/productDetail.do?ItemCode=1567&benefit=season2"
           >
             혜택 자세히 보기
-          </a>
+          </Link>
         </div>
 
         <Image src={yogo_benefit_6} alt="잍이터가 최대 3배" id="link2" className="w-[100%]" />
