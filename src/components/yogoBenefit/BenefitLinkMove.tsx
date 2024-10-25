@@ -100,11 +100,13 @@ const BenefitLinkMove = () => {
       {/* 링크 버튼이 나타나는 부분 */}
 
       <div
-        className="relative"
         id="link1"
         ref={(el) => {
           sectionRefs.current['link1'] = el;
         }}
+        className={`relative transition-all duration-700 ease-out transform ${
+          activeSection === 'link1' ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+        }`}
       >
         <Image src={yogo_benefit_5} alt="더욱 강력해진 시즌2" className="w-[100%]" />
         <Link
@@ -120,6 +122,9 @@ const BenefitLinkMove = () => {
         ref={(el) => {
           sectionRefs.current['link2'] = el;
         }}
+        className={`transition-all duration-700 ease-out transform ${
+          activeSection === 'link2' ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+        }`}
       >
         <Image src={yogo_benefit_6} alt="잍이터가 최대 3배" className="w-[100%]" />
         <div className="px-[7vw] overflow-x-scroll bg-[#f1fffe] pb-[50px]">
@@ -132,6 +137,9 @@ const BenefitLinkMove = () => {
           sectionRefs.current['link3'] = el;
         }}
         id="link3"
+        className={` transition-all duration-700 ease-out transform ${
+          activeSection === 'link3' ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+        }`}
       >
         <Image src={yogo_benefit_8} alt="요고 멤버쉽 혜택" className="w-[100%]" />
       </div>
@@ -141,6 +149,9 @@ const BenefitLinkMove = () => {
           sectionRefs.current['link4'] = el;
         }}
         id="link4"
+        className={`transition-all duration-700 ease-out transform ${
+          activeSection === 'link4' ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+        }`}
       >
         <Image src={yogo_benefit_9} alt="쿠폰팩 혜택" className="w-[100%]" />
       </div>
