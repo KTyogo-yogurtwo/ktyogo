@@ -1,5 +1,5 @@
 'use client';
-import { checkbox, range_bg } from '@/assets/images/planCalc/images';
+import { add_badge, benefit_twice, checkbox, range_bg } from '@/assets/images/planCalc/images';
 import { KTPlan } from '@/types/types';
 import { useEffect, useState } from 'react';
 
@@ -86,13 +86,24 @@ const PlanCalcTop = ({ list, selectedPlan, setSelectedPlan }: PlanCalcTopProps) 
                 {planStage < 5 && (
                   <>
                     <span>+</span>
-                    <em className="text-[#fe2e36] not-italic">5GB</em>
+                    <em
+                      className="text-[#fe2e36] not-italic pr-[9vw] bg-no-repeat bg-right-bottom"
+                      style={{ backgroundImage: `url(${add_badge.src})`, backgroundSize: '8vw' }}
+                    >
+                      5GB
+                      <i className=""></i>
+                    </em>
                   </>
                 )}
                 {planStage < 9 && planStage > 4 && (
                   <>
                     <span>+</span>
-                    <em className="text-[#fe2e36] not-italic">{selectedPlan?.data.total_data}</em>
+                    <em
+                      className="text-[#fe2e36] not-italic pr-[9vw] bg-no-repeat bg-right-bottom"
+                      style={{ backgroundImage: `url(${add_badge.src})`, backgroundSize: '8vw' }}
+                    >
+                      {selectedPlan?.data.total_data}
+                    </em>
                   </>
                 )}
               </>
@@ -139,7 +150,14 @@ const PlanCalcTop = ({ list, selectedPlan, setSelectedPlan }: PlanCalcTopProps) 
             </>
           ) : (
             <>
-              <span>5GB</span>
+              <div className={'text-center relative'}>
+                <del>5GB</del>
+                <span className="font-bold block">10GB</span>
+                <i
+                  className="absolute w-[7vw] h-[4.8vw] top-[1.2vw] right-[-7vw] bg-contain"
+                  style={{ backgroundImage: `url(${benefit_twice.src})` }}
+                ></i>
+              </div>
               <span>35GB</span>
               <span>무제한</span>
             </>
