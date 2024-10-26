@@ -72,7 +72,7 @@ const PlanCalcTop = ({ list, selectedPlan, setSelectedPlan }: PlanCalcTopProps) 
         <div className="flex justify-between items-center pt-[5vw] pb-[4vw] border-[#ccc] border-t px-[4vw]">
           <button
             onClick={handleStageMinusBtn}
-            className="w-[8vw] h-[8vw] border-[#0f807b] rounded-[50%] border-2 text-[7vw] bg-white leading-[100%]"
+            className="w-[8vw] h-[8vw] border-[#0f807b] rounded-[50%] border-2 text-[7vw] bg-white flex items-center justify-center"
           >
             -
           </button>
@@ -111,7 +111,7 @@ const PlanCalcTop = ({ list, selectedPlan, setSelectedPlan }: PlanCalcTopProps) 
           </div>
           <button
             onClick={handleStagePlusBtn}
-            className="w-[8vw] h-[8vw] border-[#0f807b] rounded-[50%] border-2 text-[7vw] bg-white leading-[7vw]"
+            className="w-[8vw] h-[8vw] border-[#0f807b] rounded-[50%] border-2 text-[7vw] bg-white items-center justify-center"
           >
             +
           </button>
@@ -148,7 +148,7 @@ const PlanCalcTop = ({ list, selectedPlan, setSelectedPlan }: PlanCalcTopProps) 
               <span>4만2천</span>
               <span>6만9천</span>
             </>
-          ) : (
+          ) : isYBenefit ? (
             <>
               <div className={'text-center relative'}>
                 <del>5GB</del>
@@ -158,8 +158,21 @@ const PlanCalcTop = ({ list, selectedPlan, setSelectedPlan }: PlanCalcTopProps) 
                   style={{ backgroundImage: `url(${benefit_twice.src})` }}
                 ></i>
               </div>
-              <span>35GB</span>
-              <span>무제한</span>
+              <div className={'text-center relative'}>
+                <del>35GB</del>
+                <span className="font-bold block">70GB</span>
+                <i
+                  className="absolute w-[7vw] h-[4.8vw] top-[1.2vw] right-[-7vw] bg-contain"
+                  style={{ backgroundImage: `url(${benefit_twice.src})` }}
+                ></i>
+              </div>
+              <span className="font-bold block">무제한</span>
+            </>
+          ) : (
+            <>
+              <span className="font-bold block">5GB</span>
+              <span className="font-bold block">35GB</span>
+              <span className="font-bold block">무제한</span>
             </>
           )}
         </div>
