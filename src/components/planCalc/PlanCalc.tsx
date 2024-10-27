@@ -14,7 +14,7 @@ const PlanCalc = ({ list }: PlanCalcProps) => {
   useEffect(() => {
     // setProcessedData(list);
     if (list.length > 0) {
-      setSelectedPlan(list[0]);
+      setSelectedPlan(list[6]);
     }
   }, [list]);
 

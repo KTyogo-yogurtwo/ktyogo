@@ -12,7 +12,7 @@ interface PlanCalcTopProps {
 const PlanCalcTop = ({ list, selectedPlan, setSelectedPlan }: PlanCalcTopProps) => {
   const [isMonthToggled, seMonthToggled] = useState(false); // 데이터 용량과 월정액간의 토글
   const [isYBenefit, setIsYBenefit] = useState(false); // Y덤 혜택 여부의 토글
-  const [planStage, setPlanStage] = useState(1); // 요금제 단계 선택 (1 시작)
+  const [planStage, setPlanStage] = useState(7); // 요금제 단계 선택 (7 시작)
 
   useEffect(() => {
     setSelectedPlan(list[planStage - 1]);
@@ -110,8 +110,8 @@ const PlanCalcTop = ({ list, selectedPlan, setSelectedPlan }: PlanCalcTopProps) 
             )}
           </div>
           <button
+            className="w-[8vw] h-[8vw] border-[#0f807b] rounded-full border-2 text-[6vw] bg-white flex items-center justify-center"
             onClick={handleStagePlusBtn}
-            className="w-[8vw] h-[8vw] border-[#0f807b] rounded-[50%] border-2 text-[7vw] bg-white items-center justify-center"
           >
             +
           </button>
