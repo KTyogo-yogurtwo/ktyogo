@@ -23,7 +23,7 @@
 
 [**김지영**](https://github.com/jiographie): 팀대표자, 헤더를 포함한 공통 레이아웃 및 요고 가입혜택 페이지 UI 설계 및 Tailwind CSS 스타일링 
 
-[**이신우**](https://github.com/SH1NW00-0H): 푸터 컴포넌트, 브랜드스토리 페이지, 유의사항 섹션, 상단 이동 버튼 담당, UI 설계 및 구현과 Tailwind CSS를 활용한 스타일링
+[**오신우**](https://github.com/SH1NW00-0H): 푸터 컴포넌트, 브랜드스토리 페이지, 유의사항 섹션, 상단 이동 버튼 담당, UI 설계 및 구현과 Tailwind CSS를 활용한 스타일링
 
 [**황현호**](https://github.com/hnochx): 챗봇 페이지 UI 설계 & 기능 담당, Github Repository 관리, 배포 작업 관리
 
@@ -87,8 +87,8 @@ logoColor=white"/>
 |요고 다이렉트|요고 가입 혜택|요고 브랜드 스토리|
 |:---:|:---:|:---:|
 |![요고 다이렉트](public/readme/yogo_direct.png)|![요고 가입 혜택](public/readme/yogo_benefit.png)|![요고 브랜드 스토리](public/readme/yogo_brandstory.png)|
-|핸드폰 등록 및 요금제 변경|챗봇|
-|![핸드폰 등록 및 요금제 변경](public/readme/yogo_changerate.png)|![챗봇](public/readme/yogo_chatbot.png)|
+|핸드폰 등록 및 요금제 변경|챗봇|나만의 요금제 찾기|
+|![핸드폰 등록 및 요금제 변경](public/readme/yogo_changerate.png)|![챗봇](public/readme/yogo_chatbot.png)|![나만의 요금제 찾기](public/readme/yogo_recommend.png)|
 
 
 ## ☄️ 트러블 슈팅
@@ -128,8 +128,7 @@ logoColor=white"/>
 💡 해결
 - 스크롤 함수와 현재 위치를 감지하는 코드로 인해 스크롤 이동 시 움직임을 설정하기 이전보다 편해졌다.
 - 원하는 위치로 스크롤 이동이 가능하도록 커스텀이 가능해졌다.
-
-
+****
 ### 브랜드스토리 페이지에서 배경 이미지가 표시되지 않는 문제
 ❓ 원인 분석
 - 처음에는 Tailwind의 bg-cover, bg-center, bg-[url('/path/to/image.png')] 등을 활용하여 배경 이미지를 설정하려 했으나
